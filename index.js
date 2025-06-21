@@ -1,10 +1,11 @@
 (() => {
 
-    const arrivalsTableSelector = 'table'
+    const arrivalsTableSelector = 'table.arrivals-today'
     const roomNumTDSelector = 'td:nth-child(3)'
     const outputPanelSelector = 'body' 
 
-    let roomNumberStrs = Array.from(document.querySelectorAll(`${arrivalsTableSelector} ${roomNumTDSelector}`))
+    const tableEl = document.querySelector(arrivalsTableSelector)
+    let roomNumberStrs = Array.from(tableEl.querySelectorAll(roomNumTDSelector))
     roomNumberStrs = roomNumberStrs.map(el => el.textContent)
     console.log("arrivals listing script | numbers in table: " + roomNumberStrs.join(", "))
 

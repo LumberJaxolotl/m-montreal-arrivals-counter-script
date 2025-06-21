@@ -44,7 +44,7 @@
             .sort((a, b) => b[1] - a[1])
             .map(([key, value]) => `#${key}: ${value}`)
             .join('\n');
-
+        // sort by floor/building in order of the HK sheet  
         return (
 `
 🚪 Private Rooms

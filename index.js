@@ -2,7 +2,7 @@
 
     const arrivalsTableSelector = 'table.arrivals-today'
     const roomNumTDSelector = 'td:nth-child(3)'
-    const outputPanelSelector = 'body' 
+
 
     const tableEl = document.querySelector(arrivalsTableSelector)
     let roomNumberStrs = Array.from(tableEl.querySelectorAll(roomNumTDSelector))
@@ -32,8 +32,32 @@
         counts.set(num, (counts.get(num) || 0) + 1);
     }
 
+
+    function getHTMLReturn(privateRoomNums, dormRoomNums) {
+        const privateRoomsList = privateRoomNums.join(", ")
+
+        const dormRoomCounts = new Map();
+        for (const num of dormRoomNums) {
+            dormRoomCounts.set(num, (dormRoomCounts.get(num) || 0) + 1);
+        }
+        const dormRoomsList = Array.from(dormRoomCounts)
+            .sort((a, b) => b[1] - a[1])
+            .map(([key, value]) => `#${key}: ${value}`)
+            .join('<br>');
+        // sort by floor/building in order of the HK sheet  
+        return (`
+            <div>
+                <h2>🚪 Private Rooms</h2>
+                <p>${privateRoomsList}<p>
+                <br>
+                <h2>🛏️ Dorm Rooms</h2>
+                <p>${dormRoomsList}</p>
+            </div>
+        `)
+    }
+
     // printing the result
-    function getReturn(privateRoomNums, dormRoomNums) {
+    function getConsoleReturn(privateRoomNums, dormRoomNums) {
         const privateRoomsList = privateRoomNums.join(", ")
 
         const dormRoomCounts = new Map();
@@ -46,7 +70,7 @@
             .join('\n');
         // sort by floor/building in order of the HK sheet  
         return (
-`
+            `
 🚪 Private Rooms
 ${privateRoomsList}
 
@@ -55,16 +79,14 @@ ${dormRoomsList}
 `)
     }
 
-    const panelOutputText = getReturn(privateRooms, dormRooms)
-    console.log(getReturn(privateRooms, dormRooms))
+    const outputPanel = document.querySelector('')
+    const panelOutputText = getHTMLReturn(privateRooms, dormRooms)
+    outputPanel.innerHTML = panelOutputText
+    console.log(getHTMLReturn(privateRooms, dormRooms))
+    console.log(getConsoleReturn(privateRooms, dormRooms))
 
-    // alternative output option for down the road
-    // const outputPanel = document.querySelector(outputPanelSelector)
-    // outputPanel.innerHTML = `
-    // <p>
-    //     ${panelOutputText}
-    // </p>
-    // `
+
+
 
 
 })()

@@ -79,9 +79,9 @@ ${dormRoomsList}
 `)
     }
 
-    const outputPanel = document.querySelector('')
-    const panelOutputText = getHTMLReturn(privateRooms, dormRooms)
-    outputPanel.innerHTML = panelOutputText
+    // const outputPanel = document.querySelector('body')
+    // const panelOutputText = getHTMLReturn(privateRooms, dormRooms)
+    // outputPanel.innerHTML = panelOutputText
     console.log(getHTMLReturn(privateRooms, dormRooms))
     console.log(getConsoleReturn(privateRooms, dormRooms))
 

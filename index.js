@@ -44,9 +44,16 @@
             .sort((a, b) => b[1] - a[1])
             .map(([key, value]) => `#${key}: ${value}`)
             .join('<br>');
-        // sort by floor/building in order of the HK sheet  
+        
+        // sort by floor/building in order of the HK sheet
         return (`
-            <div style="font-size: 18pt">
+            <div class="mac__sorted-arrivals-panel">
+                <style>
+                    .mac__sorted-arrivals-panel{
+                        padding: 2rem 1.5rem;
+                        font-size: 18pt
+                    }
+                </style>
                 <h2>🚪 Private Rooms</h2>
                 <p>${privateRoomsList}<p>
                 <br>

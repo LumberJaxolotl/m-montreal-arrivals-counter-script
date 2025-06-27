@@ -52,6 +52,7 @@
                 <br>
                 <h2>🛏️ Dorm Rooms</h2>
                 <p>${dormRoomsList}</p>
+                <button id="print-btn" type="button">Print Me 🖨️</button>
             </div>
         `)
     }
@@ -88,5 +89,30 @@ ${dormRoomsList}
 
 
 
+  //click-to-print report feature
+  document.getElementById("print-btn").addEventListener("click", function () {
+  const content = document.getElementById("print-container").innerHTML;
+
+  const printWindow = window.open('', '', 'width=800,height=600');
+  printWindow.document.write(`
+    <html>
+      <head>
+        <title>Print Page</title>
+        <style>
+          body { font-family: sans-serif; padding: 20px; }
+        </style>
+      </head>
+      <body>
+        ${content}
+        <script>
+          window.onload = function() {
+            window.print();
+          }
+        <\/script>
+      </body>
+    </html>
+  `);
+  printWindow.document.close(); // Needed for some browsers
+});
 
 })()

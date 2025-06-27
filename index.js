@@ -80,7 +80,7 @@ ${dormRoomsList}
 `)
     }
 
-    // const outputPanel = document.querySelector('body')
+    // const outputPanel = document.querySelector('#arrivals > div.tabbable-line.tabbable-custom-in.arrivals > div')
     // const panelOutputText = getHTMLReturn(privateRooms, dormRooms)
     // outputPanel.innerHTML = panelOutputText
     console.log(getHTMLReturn(privateRooms, dormRooms))

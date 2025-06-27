@@ -46,7 +46,7 @@
             .join('<br>');
         // sort by floor/building in order of the HK sheet  
         return (`
-            <div>
+            <div style="font-size: 18pt">
                 <h2>🚪 Private Rooms</h2>
                 <p>${privateRoomsList}<p>
                 <br>
@@ -80,9 +80,13 @@ ${dormRoomsList}
 `)
     }
 
-    // const outputPanel = document.querySelector('#arrivals > div.tabbable-line.tabbable-custom-in.arrivals > div')
+    const outputPanel = document.querySelector('#arrivals > div.tabbable-line.tabbable-custom-in.arrivals > div')
     // const panelOutputText = getHTMLReturn(privateRooms, dormRooms)
     // outputPanel.innerHTML = panelOutputText
+    
+    // remove line after script testing
+    outputPanel.innerHTML = getConsoleReturn(privateRooms, dormRooms)
+    
     console.log(getHTMLReturn(privateRooms, dormRooms))
     console.log(getConsoleReturn(privateRooms, dormRooms))
 

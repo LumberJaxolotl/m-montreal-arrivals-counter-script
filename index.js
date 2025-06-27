@@ -52,7 +52,7 @@
                 <br>
                 <h2>🛏️ Dorm Rooms</h2>
                 <p>${dormRoomsList}</p>
-                <button id="print-btn" type="button">Print Me 🖨️</button>
+                <button id="print-btn" type="button" style="margin-top:1.5rem;">Print Me 🖨️</button>
             </div>
         `)
     }
@@ -91,7 +91,8 @@ ${dormRoomsList}
 
   //click-to-print report feature
   document.getElementById("print-btn").addEventListener("click", function () {
-  const content = document.getElementById("print-container").innerHTML;
+// TODO update this to a correct .querySelector()  
+const content = document.getElementById("print-container").innerHTML;
 
   const printWindow = window.open('', '', 'width=800,height=600');
   printWindow.document.write(`

@@ -80,15 +80,20 @@
     function getHTMLReturn(privateRoomNums, dormRoomNums) {
         const privateRoomsList = privateRoomNums.join(", ")
 
+        // collapses dorm rooms into map
         const dormRoomCounts = new Map();
         for (const num of dormRoomNums) {
             dormRoomCounts.set(num, (dormRoomCounts.get(num) || 0) + 1);
         }
+
+        // generates list item HTML 
         const dormRoomsList = Array.from(dormRoomCounts)
             .sort((a, b) => b[1] - a[1])
             .map(([key, value]) => `#${key}: ${value}`)
             .join('<br>');
 
+        
+        
         const allRoomsList = []
 
         // sort by floor/building in order of the HK sheet
@@ -96,20 +101,24 @@
             <div class="mac__sorted-arrivals-panel">
                 <style>
                     .mac__sorted-arrivals-panel{
+                        width: 100%;
+                        height: 100%;
                         padding: 2rem 1.5rem;
                         font-size: 18pt
                     }
                 </style>
-                <h2>🚪 Private Rooms</h2>
-                <p>${privateRoomsList}<p>
-                <br>
-                <h2>🛏️ Dorm Rooms</h2>
-                <p>${dormRoomsList}</p>
-                <br>
-                <h2>* All Room Types *</h2>
-                <p>${allRoomsList}</p>
+                <div id="copyToClipboardContent">
+                    <h2>🚪 Private Rooms</h2>
+                    <p>${privateRoomsList}<p>
+                    <br>
+                    <h2>🛏️ Dorm Rooms</h2>
+                    <p>${dormRoomsList}</p>
+                    <br>
+                    <h2>🚪🛏️ All Room Types 🛏️🚪</h2>
+                    <p>${allRoomsList}</p>
+                </div>
                 <button id="print-btn" type="button" style="margin-top:1.5rem;">Print Me 🖨️</button>
-
+                <button id="copy-btn" type="button" style="margin-top:1.5rem;">Copy to Cipboard 📋</button>
             </div>
         `)
     }

@@ -153,7 +153,7 @@ ${dormRoomsList}
     // remove line after script testing
     outputPanel.innerHTML = getConsoleReturn(privateRooms, dormRooms)
     
-    console.log(getHTMLReturn(privateRooms, dormRooms))
+    //console.log(getHTMLReturn(privateRooms, dormRooms))
     console.log(getConsoleReturn(privateRooms, dormRooms))
 
 

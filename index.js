@@ -1,5 +1,5 @@
 (() => {
-    const PRIVATE_ROOM_NUMS = []
+    const PRIVATE_ROOM_NUMS = [,]
     
     const arrivalsTableSelector = 'table.arrivals-today'
     const roomNumTDSelector = 'td:nth-child(3)'
@@ -10,38 +10,57 @@
     roomNumberStrs = roomNumberStrs.map(el => el.textContent)
     console.log("arrivals listing script | numbers in table: " + roomNumberStrs.join(", "))
 
-    const privateRooms = []
-    const dormRooms = []
+    // converts strings to numbers
+    const allRoomNums = []
     for (let roomNumberStr of roomNumberStrs) {
         const trimmed = roomNumberStr.trim()
 
-        // sorts private rooms 
+
         if (trimmed.length === 3) {
             const roomNum = Number(roomNumberStr)
-            privateRooms.push(roomNum)
+            allRoomNums.push(roomNum)
         }
         else {
             const threeDigitRoomNumStr = roomNumberStr.trim().slice(0, 3)
             const roomNum = Number(threeDigitRoomNumStr)
-            dormRooms.push(roomNum)
+            allRoomNums.push(roomNum)
         }
 
     }
 
-    const counts = new Map();
-    const allRoomCounts = [].concat(privateRooms, dormRooms)
-    for (const num of allRoomNums) {
-        counts.set(num, (counts.get(num) || 0) + 1);
+    // tallies up duplicates
+    const roomCounts = new Map();
+    for (const num of allRoomNums) { 
+        roomCounts.set(num, (roomCounts.get(num) || 0) + 1);
     }
 
+    function isPrivateRoom(roomNum) {
+        return PRIVATE_ROOM_NUMS.includes(roomNum) 
+    }
+    function getPrivateAndDormRoomsCounts(allRoomCounts) {
+        const privateRooms = new Map();
+        const dormRooms = new Map();
+
+        for (const [roomNum, count] of allRoomCounts.entries()) {
+            if (isPrivateRoom(roomNum)) {
+            privateRooms.set(roomNum, count);
+            } else {
+            dormRooms.set(roomNum, count);
+            }
+        }
+
+        return {
+            privateRooms,
+            dormRooms
+        };
+    }
     
     /**
     * @param {Map<number, number>} roomCounts - A map where keys are room numbers and values are counts
     */
-    function divideIntoFloors(roomCounts) {
-        // room numbers sections
+    function divideIntoFloors(roomCounts, privateRoomChartList) {
+        // room numbers consts
         const allFloors = new Map()
-
         allFloors.set(0, [102, 104, 106, 108, 110])
         allFloors.set(1, [202, 204, 206, 208, 210, 212, 214, 216])
         allFloors.set(2, [302, 304, 306, 308, 310, 312, 314, 316])
@@ -68,7 +87,7 @@
             }
         }
 
-        // sort floor group numbers
+        // sorts  floor group numbers
         for (const floor in foundRooms) {
             foundRooms[floor] = foundRooms[floor].sort((a, b) => a - b);
         }
@@ -76,9 +95,10 @@
         return foundRooms
     }
 
-
-    function getHTMLReturn(privateRoomNums, dormRoomNums) {
+    function getHTMLReturn(roomCounts) {
         const privateRoomsList = privateRoomNums.join(", ")
+
+        
 
         // collapses dorm rooms into map
         const dormRoomCounts = new Map();
@@ -147,8 +167,8 @@ ${dormRoomsList}
     }
 
     const outputPanel = document.querySelector('#arrivals > div.tabbable-line.tabbable-custom-in.arrivals > div')
-    // const panelOutputText = getHTMLReturn(privateRooms, dormRooms)
-    // outputPanel.innerHTML = panelOutputText
+    const panelOutputText = getHTMLReturn(counts)
+    outputPanel.innerHTML = panelOutputText
     
     // remove line after script testing
     outputPanel.innerHTML = getConsoleReturn(privateRooms, dormRooms)

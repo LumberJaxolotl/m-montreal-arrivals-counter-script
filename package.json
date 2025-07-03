@@ -1,0 +1,12 @@
+{
+  "name": "m-montreal-arrivals-counter-script",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "build": "npx esbuild src/index.ts --bundle --outfile=dist/index.js --platform=node",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chris Cormier",
+  "license": "ISC"
+}

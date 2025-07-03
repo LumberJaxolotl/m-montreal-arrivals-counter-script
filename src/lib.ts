@@ -1,28 +1,9 @@
-// functions for quickly sorting room types 
-function getPrivateAndDormRoomsCounts(allRoomCounts, privateRoomNums) {
-    const privateRooms = new Map();
-    const dormRooms = new Map();
-
-    for (const [roomNum, count] of allRoomCounts.entries()) {
-        if (privateRoomNums(roomNum)) {
-            privateRooms.set(roomNum, count);
-        } else {
-            dormRooms.set(roomNum, count);
-        }
-    }
-
-    return {
-        privateRooms,
-        dormRooms
-    };
-}
-
 /**
 * @param {Map<number, number>} roomCounts - A map where keys are room numbers and values are counts
 */
-function divideIntoFloors(roomCounts) {
+export function divideIntoFloors(roomsCounts: Map<number, number>) {
     // room numbers consts
-    const FLOORS = new Map()
+    const FLOORS = new Map<number, number[]>()
     FLOORS.set(0, [102, 104, 106, 108, 110])
     FLOORS.set(1, [202, 204, 206, 208, 210, 212, 214, 216])
     FLOORS.set(2, [302, 304, 306, 308, 310, 312, 314, 316])
@@ -32,19 +13,22 @@ function divideIntoFloors(roomCounts) {
 
     // declare roomsByFloor as a Map instead of an object
     const roomsByFloor = new Map([
-        [0, new Map()],
-        [1, new Map()],
-        [2, new Map()],
-        [3, new Map()],
-        [4, new Map()],
-        [5, new Map()]
+        [0, new Map<number, number>()],
+        [1, new Map<number, number>()],
+        [2, new Map<number, number>()],
+        [3, new Map<number, number>()],
+        [4, new Map<number, number>()],
+        [5, new Map<number, number>()]
     ]);
     // puts room number into its floor group
-    for (const roomCount of roomCounts.entries()) {
-        const [roomNum, count] = roomCount
+    for (const roomCount of roomsCounts.entries()) {
+        const [roomNum, tally] = roomCount
+
         for (const [floor, roomsMap] of FLOORS.entries()) {
             if (roomsMap.includes(roomNum)) {
-                roomsByFloor.set(floor, roomCount)
+                if (floor === undefined)
+                    console.error("variable floor is undefined")
+                roomsByFloor.get(floor)!.set(roomNum, tally)
                 break
             }
         }
@@ -53,8 +37,11 @@ function divideIntoFloors(roomCounts) {
     // sorts  floor group numbers
     for (const [floor, rooms] of roomsByFloor.entries()) {
 
-        const sorted = Array.from(rooms).sort((a, b) => a - b)
-        
+        let roomsArray = Array.from(rooms)
+
+        const sortedArray = roomsArray.sort((a, b) => a[0] - b[0])
+        const sorted = new Map(sortedArray)
+
         roomsByFloor.set(floor, sorted)
     }
 
@@ -62,11 +49,30 @@ function divideIntoFloors(roomCounts) {
 }
 
 
-function floorToHTMLUL(roomCount) {
+export function floorToHTMLUL(roomCount: Map<number, number>, privateRoomsList: number[]) {
     let content = ''
     for (const [roomNum, numOfArrivals] of roomCount.entries()) {
-        content += `<li>${roomNum} - ${numOfArrivals}</li>`
+        const isPrivateRoom = privateRoomsList.includes(roomNum)
+        if (isPrivateRoom)
+            content += `<li>${roomNum} *</li>`
+        else
+            content += `<li>${roomNum} - ${numOfArrivals}</li>`
     }
     content = `<ul>${content}</ul>`
     return content
+}
+
+export function selectTextInElement(element: Node) {
+    if (!element) return console.error("Element not found.");
+
+    const range = document.createRange();
+    range.selectNodeContents(element);
+
+    const selection = window.getSelection();
+    if (selection === null) {
+        return
+    }
+
+    selection.removeAllRanges();
+    selection.addRange(range);
 }

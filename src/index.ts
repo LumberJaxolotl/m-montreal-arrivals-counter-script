@@ -1,3 +1,9 @@
+import {
+    divideIntoFloors,
+    floorToHTMLUL, 
+    selectTextInElement
+} from './lib'
+
 (() => {
     const PRIVATE_ROOM_NUMS = [
         104, 108, 202, 206, 208, 214, 302, 308, 314,
@@ -42,20 +48,17 @@
         roomCounts.set(num, (roomCounts.get(num) || 0) + 1);
     }
 
-    console.log('roomCounts: ', Array.from(roomCounts) )
     
    
 
-    function getHTMLReturn(roomCounts) {
-        const { privateRooms, dormRooms } = getPrivateAndDormRoomsCounts(roomCounts, PRIVATE_ROOM_NUMS)
-        const privateRoomsList = Array.from(privateRooms.entries()).join(", ")
-
+    function getHTMLReturn(roomCounts: Map<number, number>, privateRoomsList: number[]) {
 
         // constructs most important html template construction
         const floors = divideIntoFloors(roomCounts) 
+        console.log("floors: ", floors)
         let finalArrivalsListItems = ""
         for (const [floorNum, roomCount] of floors.entries()) {
-            const itemElContent = `${ floorToHTMLUL(roomCount) }`
+            const itemElContent = `${ floorToHTMLUL(roomCount, privateRoomsList) }`
             finalArrivalsListItems += `<li>${itemElContent}</li>`
         }
 
@@ -67,19 +70,29 @@
                         width: 100%;
                         height: 100%;
                         padding: 2rem 1.5rem;
-                        font-size: 18pt
+                        font-size: 18pt;
+                        white-space: pre-line;
+                    }
+                    .mac__sorted-arrivals-panel p{
+                        margin-top:0;
+                        margin-bottom:0;
+                    }
+                    .mac__sorted-arrivals-panel ul{
+                        padding-left:0;
+                        margin-bottom:2rem;
+                    }
+                    .mac__sorted-arrivals-panel li{
+                        list-style-type: none;
                     }
                 </style>
-                <div id="copyToClipboardContent">
-                    <h2>🚪 Private Rooms</h2>
-                    <p>${privateRoomsList}<p>
-                    <br>
-                    <h2>🚪🛏️ All Room Types 🛏️🚪</h2>
+                <div id="contentToSelect">
+                    <h2>🛏️ Today's Arrivals By Room 🛏️🚪</h2>
+                    <p>[room] - [number of arrivals] | * = private room<p>
                     <ul>
                         ${finalArrivalsListItems}
                     </ul>
                 </div>
-                <button id="copy-btn" type="button" style="margin-top:1.5rem;">Copy to Cipboard 📋</button>
+                <button>Select Report Text 📃</button>
             </div>
         `)
     }
@@ -97,14 +110,18 @@ ${Array.from(roomCounts)}`
         console.error("outputPanel could not be retried from DOM")
         return
     }
-        
-    const panelOutputText = getHTMLReturn(roomCounts)
+
+    const panelOutputText = getHTMLReturn(roomCounts, PRIVATE_ROOM_NUMS)
     outputPanel.innerHTML = panelOutputText
 
-    // remove line after script testing
-    outputPanel.innerHTML = getConsoleReturn(roomCounts)
-
-    //console.log(getHTMLReturn(privateRooms, dormRooms))
+    const contentNodeToSelect = outputPanel.querySelector('#contentToSelect')
+    if (contentNodeToSelect) {
+        const btn = outputPanel.querySelector('button')
+        btn?.addEventListener('mouseup', () => { selectTextInElement(contentNodeToSelect) })
+    }
+    
+    
+    
     console.log(getConsoleReturn(roomCounts))
 
 })()

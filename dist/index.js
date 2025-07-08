@@ -116,6 +116,7 @@ function selectTextInElement(element) {
       allRoomNums.push(roomNum);
     }
   }
+  console.log("Room numbers from found table: ", allRoomNums.join(", "));
   const roomCounts = /* @__PURE__ */ new Map();
   for (const num of allRoomNums) {
     roomCounts.set(num, (roomCounts.get(num) || 0) + 1);

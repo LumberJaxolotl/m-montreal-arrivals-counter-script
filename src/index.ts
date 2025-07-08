@@ -42,6 +42,11 @@ import {
 
     }
 
+    // Next shift need to verify numbers being found by 
+    // script are ACTUALLY those of the arrivals panel. 
+    // logs the numbers pulled from DOM
+    console.log("Room numbers from found table: ", allRoomNums.join(", "))
+
     // tallies up duplicates
     const roomCounts = new Map<number, number>();
     for (const num of allRoomNums) {
@@ -105,6 +110,7 @@ ${Array.from(roomCounts)}`
         )
     }
 
+    // wiping arrival panel content and placing report
     const outputPanel = document.querySelector('#arrivals > div.tabbable-line.tabbable-custom-in.arrivals > div')
     if (!outputPanel) {
         console.error("outputPanel could not be retried from DOM")
@@ -114,13 +120,12 @@ ${Array.from(roomCounts)}`
     const panelOutputText = getHTMLReturn(roomCounts, PRIVATE_ROOM_NUMS)
     outputPanel.innerHTML = panelOutputText
 
+    // copy to clipboard button
     const contentNodeToSelect = outputPanel.querySelector('#contentToSelect')
     if (contentNodeToSelect) {
         const btn = outputPanel.querySelector('button')
         btn?.addEventListener('mouseup', () => { selectTextInElement(contentNodeToSelect) })
     }
-    
-    
     
     console.log(getConsoleReturn(roomCounts))
 

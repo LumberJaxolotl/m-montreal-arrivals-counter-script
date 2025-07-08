@@ -39,11 +39,11 @@ function floorToHTMLUL(roomCount, privateRoomsList) {
   for (const [roomNum, numOfArrivals] of roomCount.entries()) {
     const isPrivateRoom = privateRoomsList.includes(roomNum);
     if (isPrivateRoom)
-      content += `<li>${roomNum} *</li>`;
+      content += `<li>${roomNum} *</li><br>`;
     else
-      content += `<li>${roomNum} - ${numOfArrivals}</li>`;
+      content += `<li>${roomNum} - ${numOfArrivals}</li><br>`;
   }
-  content = `<ul>${content}</ul>`;
+  content = `<ul>${content}</ul><br><br>`;
   return content;
 }
 function selectTextInElement(element) {

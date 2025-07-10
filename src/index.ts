@@ -23,8 +23,6 @@ import {
         
     const roomCounts = getRoomCountsFromStrs(roomsTextStr)
 
-    
-
     // wiping arrival panel content and placing report
     const outputPanel = document.querySelector('#arrivals > div.tabbable-line.tabbable-custom-in.arrivals > div')
     if (!outputPanel) {

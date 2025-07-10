@@ -154,7 +154,6 @@ export function getHTMLReturn(
                     }
                     .mac__sorted-arrivals-panel ul{
                         padding-left:0;
-                        margin-bottom:2rem;
                     }
                     .mac__sorted-arrivals-panel li{
                         list-style-type: none;

@@ -14,14 +14,18 @@ function getRoomCountsFromStrs(roomNumberStrs) {
   const allRoomNums = [];
   for (let roomNumberStr of roomNumberStrs) {
     const trimmed = roomNumberStr.trim();
+    let roomNum = 0;
     if (trimmed.length === 3) {
-      const roomNum = Number(roomNumberStr);
-      allRoomNums.push(roomNum);
+      const roomNum2 = Number(roomNumberStr);
+      if (isNaN(roomNum2))
+        return Error(`${roomNumberStr} was passed, but is not a value that can be pasrsed to a number'`);
     } else {
       const threeDigitRoomNumStr = roomNumberStr.trim().slice(0, 3);
-      const roomNum = Number(threeDigitRoomNumStr);
-      allRoomNums.push(roomNum);
+      roomNum = Number(threeDigitRoomNumStr);
+      if (isNaN(roomNum))
+        return Error(`${threeDigitRoomNumStr} was passed, but is not a value that can be pasrsed to a number'`);
     }
+    allRoomNums.push(roomNum);
   }
   console.log("Room numbers from found table: ", allRoomNums.join(", "));
   const roomCounts = /* @__PURE__ */ new Map();
@@ -175,6 +179,10 @@ ${Array.from(roomCounts)}`;
     return;
   }
   const roomCounts = getRoomCountsFromStrs(roomsTextStr);
+  if (roomCounts instanceof Error) {
+    console.error(roomCounts);
+    return;
+  }
   const outputPanel = document.querySelector("#arrivals > div.tabbable-line.tabbable-custom-in.arrivals > div");
   if (!outputPanel) {
     console.error("outputPanel could not be retried from DOM");

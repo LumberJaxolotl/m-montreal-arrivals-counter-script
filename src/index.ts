@@ -22,7 +22,12 @@ import {
     }
         
     const roomCounts = getRoomCountsFromStrs(roomsTextStr)
-
+    if (roomCounts instanceof Error) {
+        console.error(roomCounts)
+        return
+    }
+        
+    
     // wiping arrival panel content and placing report
     const outputPanel = document.querySelector('#arrivals > div.tabbable-line.tabbable-custom-in.arrivals > div')
     if (!outputPanel) {

@@ -20,16 +20,20 @@ export function getRoomCountsFromStrs(roomNumberStrs: string[]) {
     for (let roomNumberStr of roomNumberStrs) {
         const trimmed = roomNumberStr.trim()
 
+        let roomNum = 0
         if (trimmed.length === 3) {
             const roomNum = Number(roomNumberStr)
-            allRoomNums.push(roomNum)
+            if (isNaN(roomNum))
+                return Error(`${roomNumberStr} was passed, but is not a value that can be pasrsed to a number'`) 
         }
         else {
             const threeDigitRoomNumStr = roomNumberStr.trim().slice(0, 3)
-            const roomNum = Number(threeDigitRoomNumStr)
-            allRoomNums.push(roomNum)
+            roomNum = Number(threeDigitRoomNumStr)
+            if (isNaN(roomNum))
+            return Error(`${threeDigitRoomNumStr} was passed, but is not a value that can be pasrsed to a number'`) 
         }
-
+        
+        allRoomNums.push(roomNum)
     }
 
     console.log("Room numbers from found table: ", allRoomNums.join(", "))

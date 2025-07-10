@@ -1,4 +1,35 @@
 // src/lib.ts
+function getArrivalsTableRoomNumberStrs() {
+  const arrivalsTableSelector = "table.arrivals-today";
+  const roomNumTDSelector = "td:nth-child(3)";
+  const tableEl = document.querySelector(arrivalsTableSelector);
+  if (!tableEl) {
+    return new Error("tableEl could not be retrived from DOM");
+  }
+  const roomNumberTdEls = Array.from(tableEl.querySelectorAll(roomNumTDSelector));
+  const roomNumberStrs = roomNumberTdEls.map((el) => el.textContent !== null ? el.textContent : "");
+  return roomNumberStrs;
+}
+function getRoomCountsFromStrs(roomNumberStrs) {
+  const allRoomNums = [];
+  for (let roomNumberStr of roomNumberStrs) {
+    const trimmed = roomNumberStr.trim();
+    if (trimmed.length === 3) {
+      const roomNum = Number(roomNumberStr);
+      allRoomNums.push(roomNum);
+    } else {
+      const threeDigitRoomNumStr = roomNumberStr.trim().slice(0, 3);
+      const roomNum = Number(threeDigitRoomNumStr);
+      allRoomNums.push(roomNum);
+    }
+  }
+  console.log("Room numbers from found table: ", allRoomNums.join(", "));
+  const roomCounts = /* @__PURE__ */ new Map();
+  for (const num of allRoomNums) {
+    roomCounts.set(num, (roomCounts.get(num) || 0) + 1);
+  }
+  return roomCounts;
+}
 function divideIntoFloors(roomsCounts) {
   const FLOORS = /* @__PURE__ */ new Map();
   FLOORS.set(0, [102, 104, 106, 108, 110]);
@@ -57,6 +88,51 @@ function selectTextInElement(element) {
   selection.removeAllRanges();
   selection.addRange(range);
 }
+function getHTMLReturn(roomCounts, privateRoomsList, floorSortingFunction) {
+  const floors = floorSortingFunction(roomCounts);
+  console.log("floors: ", floors);
+  let finalArrivalsListItems = "";
+  for (const [floorNum, roomCount] of floors.entries()) {
+    const itemElContent = `${floorToHTMLUL(roomCount, privateRoomsList)}`;
+    finalArrivalsListItems += `<li>${itemElContent}</li>`;
+  }
+  return `
+            <div class="mac__sorted-arrivals-panel">
+                <style>
+                    .mac__sorted-arrivals-panel{
+                        width: 100%;
+                        height: 100%;
+                        padding: 2rem 1.5rem;
+                        font-size: 18pt;
+                        white-space: pre-line;
+                    }
+                    .mac__sorted-arrivals-panel p{
+                        margin-top:0;
+                        margin-bottom:0;
+                    }
+                    .mac__sorted-arrivals-panel ul{
+                        padding-left:0;
+                        margin-bottom:2rem;
+                    }
+                    .mac__sorted-arrivals-panel li{
+                        list-style-type: none;
+                    }
+                </style>
+                <div id="contentToSelect">
+                    <h2>\u{1F6CF}\uFE0F Today's Arrivals By Room \u{1F6CF}\uFE0F\u{1F6AA}</h2>
+                    <p>[room] - [number of arrivals] | * = private room<p>
+                    <ul>
+                        ${finalArrivalsListItems}
+                    </ul>
+                </div>
+                <button>Select Report Text \u{1F4C3}</button>
+            </div>
+        `;
+}
+function getConsoleReturn(roomCounts) {
+  return `Today's Arrivals
+${Array.from(roomCounts)}`;
+}
 
 // src/index.ts
 (() => {
@@ -94,84 +170,18 @@ function selectTextInElement(element) {
     485,
     490
   ];
-  const arrivalsTableSelector = "table.arrivals-today";
-  const roomNumTDSelector = "td:nth-child(3)";
-  const tableEl = document.querySelector(arrivalsTableSelector);
-  if (!tableEl) {
-    console.error("tableEl could not be retried from DOM");
+  const roomsTextStr = getArrivalsTableRoomNumberStrs();
+  if (roomsTextStr instanceof Error) {
+    console.error(roomsTextStr);
     return;
   }
-  const roomNumberTdEls = Array.from(tableEl.querySelectorAll(roomNumTDSelector));
-  const roomNumberStrs = roomNumberTdEls.map((el) => el.textContent !== null ? el.textContent : "");
-  console.log("arrivals listing script | numbers in table: " + roomNumberStrs.join(", "));
-  const allRoomNums = [];
-  for (let roomNumberStr of roomNumberStrs) {
-    const trimmed = roomNumberStr.trim();
-    if (trimmed.length === 3) {
-      const roomNum = Number(roomNumberStr);
-      allRoomNums.push(roomNum);
-    } else {
-      const threeDigitRoomNumStr = roomNumberStr.trim().slice(0, 3);
-      const roomNum = Number(threeDigitRoomNumStr);
-      allRoomNums.push(roomNum);
-    }
-  }
-  console.log("Room numbers from found table: ", allRoomNums.join(", "));
-  const roomCounts = /* @__PURE__ */ new Map();
-  for (const num of allRoomNums) {
-    roomCounts.set(num, (roomCounts.get(num) || 0) + 1);
-  }
-  function getHTMLReturn(roomCounts2, privateRoomsList) {
-    const floors = divideIntoFloors(roomCounts2);
-    console.log("floors: ", floors);
-    let finalArrivalsListItems = "";
-    for (const [floorNum, roomCount] of floors.entries()) {
-      const itemElContent = `${floorToHTMLUL(roomCount, privateRoomsList)}`;
-      finalArrivalsListItems += `<li>${itemElContent}</li>`;
-    }
-    return `
-            <div class="mac__sorted-arrivals-panel">
-                <style>
-                    .mac__sorted-arrivals-panel{
-                        width: 100%;
-                        height: 100%;
-                        padding: 2rem 1.5rem;
-                        font-size: 18pt;
-                        white-space: pre-line;
-                    }
-                    .mac__sorted-arrivals-panel p{
-                        margin-top:0;
-                        margin-bottom:0;
-                    }
-                    .mac__sorted-arrivals-panel ul{
-                        padding-left:0;
-                        margin-bottom:2rem;
-                    }
-                    .mac__sorted-arrivals-panel li{
-                        list-style-type: none;
-                    }
-                </style>
-                <div id="contentToSelect">
-                    <h2>\u{1F6CF}\uFE0F Today's Arrivals By Room \u{1F6CF}\uFE0F\u{1F6AA}</h2>
-                    <p>[room] - [number of arrivals] | * = private room<p>
-                    <ul>
-                        ${finalArrivalsListItems}
-                    </ul>
-                </div>
-                <button>Select Report Text \u{1F4C3}</button>
-            </div>
-        `;
-  }
-  function getConsoleReturn(roomCounts2) {
-    return `Today's Arrivals
-${Array.from(roomCounts2)}`;
-  }
+  const roomCounts = getRoomCountsFromStrs(roomsTextStr);
   const outputPanel = document.querySelector("#arrivals > div.tabbable-line.tabbable-custom-in.arrivals > div");
   if (!outputPanel) {
     console.error("outputPanel could not be retried from DOM");
     return;
   }
-  const panelOutputText = getHTMLReturn(roomCounts, PRIVATE_ROOM_NUMS);
+  const panelOutputText = getHTMLReturn(roomCounts, PRIVATE_ROOM_NUMS, divideIntoFloors);
   outputPanel.innerHTML = panelOutputText;
   const contentNodeToSelect = outputPanel.querySelector("#contentToSelect");
   if (contentNodeToSelect) {

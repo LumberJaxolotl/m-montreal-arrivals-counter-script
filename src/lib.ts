@@ -1,3 +1,48 @@
+export function getArrivalsTableRoomNumberStrs() {
+    const arrivalsTableSelector = 'table.arrivals-today'
+    const roomNumTDSelector = 'td:nth-child(3)'
+
+    // gets room number strings from dom
+    const tableEl = document.querySelector(arrivalsTableSelector)
+    if (!tableEl) {
+        return new Error("tableEl could not be retrived from DOM")
+    }
+    const roomNumberTdEls = Array.from(tableEl.querySelectorAll(roomNumTDSelector))
+    const roomNumberStrs = roomNumberTdEls.map(el => el.textContent !== null ? el.textContent : "")
+
+    return roomNumberStrs
+}
+
+export function getRoomCountsFromStrs(roomNumberStrs: string[]) {
+
+    // converts strings to numbers
+    const allRoomNums: number[] = []
+    for (let roomNumberStr of roomNumberStrs) {
+        const trimmed = roomNumberStr.trim()
+
+        if (trimmed.length === 3) {
+            const roomNum = Number(roomNumberStr)
+            allRoomNums.push(roomNum)
+        }
+        else {
+            const threeDigitRoomNumStr = roomNumberStr.trim().slice(0, 3)
+            const roomNum = Number(threeDigitRoomNumStr)
+            allRoomNums.push(roomNum)
+        }
+
+    }
+
+    console.log("Room numbers from found table: ", allRoomNums.join(", "))
+
+    // tallies up duplicates
+    const roomCounts = new Map<number, number>();
+    for (const num of allRoomNums) {
+        roomCounts.set(num, (roomCounts.get(num) || 0) + 1);
+    }
+
+    return roomCounts
+}
+
 /**
 * @param {Map<number, number>} roomCounts - A map where keys are room numbers and values are counts
 */
@@ -49,7 +94,7 @@ export function divideIntoFloors(roomsCounts: Map<number, number>) {
 }
 
 
-export function floorToHTMLUL(roomCount: Map<number, number>, privateRoomsList: number[]) {
+function floorToHTMLUL(roomCount: Map<number, number>, privateRoomsList: number[]) {
     let content = ''
     for (const [roomNum, numOfArrivals] of roomCount.entries()) {
         const isPrivateRoom = privateRoomsList.includes(roomNum)
@@ -75,4 +120,62 @@ export function selectTextInElement(element: Node) {
 
     selection.removeAllRanges();
     selection.addRange(range);
+}
+
+export function getHTMLReturn(
+    roomCounts: Map<number, number>,
+    privateRoomsList: number[],
+    floorSortingFunction: (map: Map<number, number>) => Map<number, Map<number, number>>
+) {
+
+    // constructs most important html template construction
+    const floors = floorSortingFunction(roomCounts)
+    console.log("floors: ", floors)
+    let finalArrivalsListItems = ""
+    for (const [floorNum, roomCount] of floors.entries()) {
+        const itemElContent = `${floorToHTMLUL(roomCount, privateRoomsList)}`
+        finalArrivalsListItems += `<li>${itemElContent}</li>`
+    }
+
+    // sort by floor/building in order of the HK sheet
+    return (`
+            <div class="mac__sorted-arrivals-panel">
+                <style>
+                    .mac__sorted-arrivals-panel{
+                        width: 100%;
+                        height: 100%;
+                        padding: 2rem 1.5rem;
+                        font-size: 18pt;
+                        white-space: pre-line;
+                    }
+                    .mac__sorted-arrivals-panel p{
+                        margin-top:0;
+                        margin-bottom:0;
+                    }
+                    .mac__sorted-arrivals-panel ul{
+                        padding-left:0;
+                        margin-bottom:2rem;
+                    }
+                    .mac__sorted-arrivals-panel li{
+                        list-style-type: none;
+                    }
+                </style>
+                <div id="contentToSelect">
+                    <h2>🛏️ Today's Arrivals By Room 🛏️🚪</h2>
+                    <p>[room] - [number of arrivals] | * = private room<p>
+                    <ul>
+                        ${finalArrivalsListItems}
+                    </ul>
+                </div>
+                <button>Select Report Text 📃</button>
+            </div>
+        `)
+}
+
+// printing the result
+export function getConsoleReturn(roomCounts) {
+    return (
+        `Today's Arrivals
+${Array.from(roomCounts)}`
+    )
 }

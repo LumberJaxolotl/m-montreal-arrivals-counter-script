@@ -106,11 +106,11 @@ function floorToHTMLUL(roomCount: Map<number, number>, privateRoomsList: number[
     for (const [roomNum, numOfArrivals] of roomCount.entries()) {
         const isPrivateRoom = privateRoomsList.includes(roomNum)
         if (isPrivateRoom)
-            content += `<li>${roomNum} *</li><br>`
+            content += `<li>${roomNum} *</li>`
         else
-            content += `<li>${roomNum} - ${numOfArrivals}</li><br>`
+            content += `<li>${roomNum} - ${numOfArrivals}</li>`
     }
-    content = `<ul>${content}</ul><br><br>`
+    content = `<ul>${content}</ul><br>`
     return content
 }
 
@@ -153,14 +153,20 @@ export function getHTMLReturn(
                         height: 100%;
                         padding: 2rem 1.5rem;
                         font-size: 18pt;
-                        white-space: pre-line;
+                    }
+                    .mac__sorted-arrivals-panel pre{
+                        margin-block: 0;
                     }
                     .mac__sorted-arrivals-panel p{
                         margin-top:0;
                         margin-bottom:0;
                     }
                     .mac__sorted-arrivals-panel ul{
-                        padding-left:0;
+                        padding-inline-start: 0;
+                        padding:0 0 0 0;
+                        margin-block:0;
+                        margin-block-start: 0em;
+                        margin-block-end: 0em;
                     }
                     .mac__sorted-arrivals-panel li{
                         list-style-type: none;
@@ -168,9 +174,11 @@ export function getHTMLReturn(
                 </style>
                 <div id="contentToSelect">
                     <h2>🛏️ Today's Arrivals By Room 🛏️🚪</h2>
-                    <p>[room] - [number of arrivals] | * = private room<p>
+                    <p>[room] - [number of arrivals] | * = private room</p>
                     <ul>
-                        ${finalArrivalsListItems}
+                        <pre>
+                            ${finalArrivalsListItems}
+                        </pre>
                     </ul>
                 </div>
                 <button>Select Report Text 📃</button>

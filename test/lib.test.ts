@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { getRoomCountsFromStrs } from '../src/lib';
 
-describe('getRoomCountsFromStrs', () => {
+describe('test getRoomCountsFromStrs function', () => {
   it('parses a list of room number strings and returns the correct room counts', () => {
 
     const roomNumStrs: string[] = [

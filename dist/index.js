@@ -16,8 +16,8 @@ function getRoomCountsFromStrs(roomNumberStrs) {
     const trimmed = roomNumberStr.trim();
     let roomNum = 0;
     if (trimmed.length === 3) {
-      const roomNum2 = Number(roomNumberStr);
-      if (isNaN(roomNum2))
+      roomNum = Number(roomNumberStr);
+      if (isNaN(roomNum))
         return Error(`${roomNumberStr} was passed, but is not a value that can be pasrsed to a number'`);
     } else {
       const threeDigitRoomNumStr = roomNumberStr.trim().slice(0, 3);

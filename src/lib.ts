@@ -15,16 +15,17 @@ export function getArrivalsTableRoomNumberStrs() {
 
 export function getRoomCountsFromStrs(roomNumberStrs: string[]) {
     // TODO find out why function is not returning private rooms in output
-    // TODO find out a 0 
+    // TODO find out why a `0 => 6` is being added 
     // converts strings to numbers
     const allRoomNums: number[] = []
+   
     for (let roomNumberStr of roomNumberStrs) {
         const trimmed = roomNumberStr.trim()
 
         let roomNum = 0
         
-        if (trimmed.length === 3) {
-            const roomNum = Number(roomNumberStr)
+        if (trimmed.length === 3) {    
+            roomNum = Number(roomNumberStr)
             if (isNaN(roomNum))
                 return Error(`${roomNumberStr} was passed, but is not a value that can be pasrsed to a number'`) 
         }

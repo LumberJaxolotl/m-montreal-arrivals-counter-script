@@ -1,6 +1,6 @@
 // src/lib.ts
 function getArrivalsTableRoomNumberStrs() {
-  const arrivalsTableSelector = "table.arrivals-today";
+  const arrivalsTableSelector = "table[data-name='arrivals-today']";
   const roomNumTDSelector = "td:nth-child(3)";
   const tableEl = document.querySelector(arrivalsTableSelector);
   if (!tableEl) {

@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Arrival List</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: sans-serif;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 6px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Arrival List</h2>
+    <div id="arrivals">
+        <div class="tabbable-line tabbable-custom-in arrivals">
+            <div>
+                <table class="arrivals-today">
+                    <thead>
+                        <tr>
+                            <th>Guest</th>
+                            <th>Conf #</th>
+                            <th>Room</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <!-- not sure if this is the exact class name yet -->
+                    <tbody>
+                        <tr>
+                            <td>Valerie Jean Hennessy</td>
+                            <td>9139450275442</td>
+                            <td>108</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Alexander Zatylny</td>
+                            <td>3473955192327</td>
+                            <td>115-A - 9</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Alexander Zatylny</td>
+                            <td>3473955192327-2</td>
+                            <td>115-A - 11</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Jiyeon Jeon</td>
+                            <td>1520736982090</td>
+                            <td>208</td>
+                            <td>Arrival</td>
+                        </tr>
+                        <tr>
+                            <td>Katie Stirton</td>
+                            <td>5090939374223-2</td>
+                            <td>210 - 2 - FEMALE</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Alexandra Lambert</td>
+                            <td>8258837907194</td>
+                            <td>210 - 4 - FEMALE</td>
+                            <td>Arrival</td>
+                        </tr>
+                        <tr>
+                            <td>Katie Stirton</td>
+                            <td>5090939374223</td>
+                            <td>210 - 5 - FEMALE</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Zachary Schaber</td>
+                            <td>7324733296185-4</td>
+                            <td>216 - 1</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Zachary Schaber</td>
+                            <td>7324733296185-5</td>
+                            <td>216 - 2</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Zachary Schaber</td>
+                            <td>7324733296185-6</td>
+                            <td>216 - 3</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Zachary Schaber</td>
+                            <td>7324733296185-3</td>
+                            <td>216 - 4</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Zachary Schaber</td>
+                            <td>7324733296185-2</td>
+                            <td>216 - 5</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Zachary Schaber</td>
+                            <td>7324733296185</td>
+                            <td>216 - 6</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Ben Knox</td>
+                            <td>2943537517262-2</td>
+                            <td>240-A- 3</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Ben Knox</td>
+                            <td>2943537517262</td>
+                            <td>240-A- 4</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Patrick (Amagi) Michael Camacho</td>
+                            <td>7766514208567</td>
+                            <td>240-A- 5</td>
+                            <td>Arrival</td>
+                        </tr>
+                        <tr>
+                            <td>Matthew King</td>
+                            <td>4069897740292</td>
+                            <td>240-A- 6</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Nellee Berry</td>
+                            <td>5009059717166</td>
+                            <td>240-A- 7</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Simon Motherway</td>
+                            <td>6071434729832</td>
+                            <td>240-A- 9</td>
+                            <td>18:00</td>
+                        </tr>
+                        <tr>
+                            <td>Baptiste Théau</td>
+                            <td>6658868026575</td>
+                            <td>240-A- 10</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Anubhav Bhartiya</td>
+                            <td>8560614566867-2</td>
+                            <td>240-A- 11</td>
+                            <td>22:00</td>
+                        </tr>
+                        <tr>
+                            <td>Anubhav Bhartiya</td>
+                            <td>8560614566867</td>
+                            <td>240-A- 12</td>
+                            <td>22:00</td>
+                        </tr>
+                        <tr>
+                            <td>Simon REMIGEREAU</td>
+                            <td>8694810982312</td>
+                            <td>245-A- 9</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Tazmin Faye williams</td>
+                            <td>6277979876507</td>
+                            <td>245-A- 10</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Eamon McCaffrey</td>
+                            <td>3972553385844</td>
+                            <td>245-A- 11</td>
+                            <td>18:00</td>
+                        </tr>
+                        <tr>
+                            <td>mohamed rafik TABI</td>
+                            <td>3268189992269</td>
+                            <td>255-A - 1</td>
+                            <td>18:00</td>
+                        </tr>
+                        <tr>
+                            <td>Sasha Alekseiev</td>
+                            <td>6307379962452</td>
+                            <td>255-A - 2</td>
+                            <td>Arrival</td>
+                        </tr>
+                        <tr>
+                            <td>Sam Cutler</td>
+                            <td>9402565993743</td>
+                            <td>255-A - 3</td>
+                            <td>20:00</td>
+                        </tr>
+                        <tr>
+                            <td>Harry Bewick</td>
+                            <td>3228672050847</td>
+                            <td>255-A - 4</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Alexandre Giachino</td>
+                            <td>5784648871460</td>
+                            <td>255-A - 5</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Alexandre Giachino</td>
+                            <td>5784648871460-2</td>
+                            <td>255-A - 6</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Alexandre Giachino</td>
+                            <td>5784648871460-3</td>
+                            <td>255-A - 7</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Sahil Tulway</td>
+                            <td>7088330888855</td>
+                            <td>255-A - 8</td>
+                            <td>01:00</td>
+                        </tr>
+                        <tr>
+                            <td>Gregory Hurne</td>
+                            <td>7750521200579</td>
+                            <td>255-A - 9</td>
+                            <td>Arrival</td>
+                        </tr>
+                        <tr>
+                            <td>Marshall Moffatt</td>
+                            <td>9516529751096</td>
+                            <td>255-A - 10</td>
+                            <td>Arrival</td>
+                        </tr>
+                        <tr>
+                            <td>Amin Afshar Zarandi</td>
+                            <td>7133452722872</td>
+                            <td>255-A - 11</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Susanne Jungbluth</td>
+                            <td>9137451861528</td>
+                            <td>315</td>
+                            <td>Arrival</td>
+                        </tr>
+                        <tr>
+                            <td>Nandu Katangaza</td>
+                            <td>8022225144764</td>
+                            <td>316 - 2</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Jean Dubost</td>
+                            <td>6525713426052</td>
+                            <td>316 - 4</td>
+                            <td>16:00</td>
+                        </tr>
+                        <tr>
+                            <td>Alex Cross</td>
+                            <td>9921782940171</td>
+                            <td>316 - 5</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Claudie Lemay</td>
+                            <td>3530116641512</td>
+                            <td>420-A - 3 - FEMALE</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Shea Hunker</td>
+                            <td>5724599040702</td>
+                            <td>420-A - 6 - FEMALE</td>
+                            <td>15:00</td>
+                        </tr>
+                        <tr>
+                            <td>Anika Funke</td>
+                            <td>2772089800917</td>
+                            <td>420-A - 8 - FEMALE</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Shea Hunker</td>
+                            <td>5724599040702-2</td>
+                            <td>420-A - 10 - FEMALE</td>
+                            <td>15:00</td>
+                        </tr>
+                        <tr>
+                            <td>Elayne Rivers</td>
+                            <td>7084698858521</td>
+                            <td>445</td>
+                            <td>Arrival</td>
+                        </tr>
+                        <tr>
+                            <td>Karthika Jayaprakash</td>
+                            <td>4373754988602</td>
+                            <td>455-A - 1 - FEMALE</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Karthika Jayaprakash</td>
+                            <td>4373754988602-2</td>
+                            <td>455-A - 2 - FEMALE</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Zoe de Paus</td>
+                            <td>9007819971368</td>
+                            <td>455-A - 3 - FEMALE</td>
+                            <td>Arrival</td>
+                        </tr>
+                        <tr>
+                            <td>Diane Urbain</td>
+                            <td>5025981354593</td>
+                            <td>455-A - 4 - FEMALE</td>
+                            <td>Arrival</td>
+                        </tr>
+                        <tr>
+                            <td>Clare McLeod</td>
+                            <td>4800696264086</td>
+                            <td>455-A - 6 - FEMALE</td>
+                            <td>09:00</td>
+                        </tr>
+                        <tr>
+                            <td>Megi Nallbani</td>
+                            <td>5478288079755</td>
+                            <td>475</td>
+                            <td>15:00</td>
+                        </tr>
+                        <tr>
+                            <td>Wang Kei Lee</td>
+                            <td>8897382840155</td>
+                            <td>480</td>
+                            <td>10:00</td>
+                        </tr>
+                        <tr>
+                            <td>Souad Amini Alaoui</td>
+                            <td>9199145712773</td>
+                            <td>495-A - 2 - FEMALE</td>
+                            <td>00:00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Arrival List</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: sans-serif;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 6px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Expected Output</h2>
+    <p>
+        108 (x1)<br>
+        115 (x2)<br>
+        208 (x1)<br>
+        210 (x3)<br>
+        216 (x6)<br>
+        240 (x9)<br>
+        245 (x3)<br>
+        255 (x11)<br>
+        315 (x1)<br>
+        316 (x3)<br>
+        420 (x4)<br>
+        445 (x1)<br>
+        455 (x5)<br>
+        475 (x1)<br>
+        480 (x1)<br>
+        495 (x1)<br>
+    </p>
+    <h2>Arrival List</h2>
+    <div id="arrivals">
+        <div class="tabbable-line tabbable-custom-in arrivals">
+            <div>
+                <table class="arrivals-today">
+                    <thead>
+                        <tr>
+                            <th>Guest</th>
+                            <th>Conf #</th>
+                            <th>Room</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <!-- not sure if this is the exact class name yet -->
+                    <tbody>
+                        <tr>
+                            <td>Valerie Jean Hennessy</td>
+                            <td>9139450275442</td>
+                            <td>108</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Alexander Zatylny</td>
+                            <td>3473955192327</td>
+                            <td>115-A - 9</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Alexander Zatylny</td>
+                            <td>3473955192327-2</td>
+                            <td>115-A - 11</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Jiyeon Jeon</td>
+                            <td>1520736982090</td>
+                            <td>208</td>
+                            <td>Arrival</td>
+                        </tr>
+                        <tr>
+                            <td>Katie Stirton</td>
+                            <td>5090939374223-2</td>
+                            <td>210 - 2 - FEMALE</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Alexandra Lambert</td>
+                            <td>8258837907194</td>
+                            <td>210 - 4 - FEMALE</td>
+                            <td>Arrival</td>
+                        </tr>
+                        <tr>
+                            <td>Katie Stirton</td>
+                            <td>5090939374223</td>
+                            <td>210 - 5 - FEMALE</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Zachary Schaber</td>
+                            <td>7324733296185-4</td>
+                            <td>216 - 1</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Zachary Schaber</td>
+                            <td>7324733296185-5</td>
+                            <td>216 - 2</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Zachary Schaber</td>
+                            <td>7324733296185-6</td>
+                            <td>216 - 3</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Zachary Schaber</td>
+                            <td>7324733296185-3</td>
+                            <td>216 - 4</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Zachary Schaber</td>
+                            <td>7324733296185-2</td>
+                            <td>216 - 5</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Zachary Schaber</td>
+                            <td>7324733296185</td>
+                            <td>216 - 6</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Ben Knox</td>
+                            <td>2943537517262-2</td>
+                            <td>240-A- 3</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Ben Knox</td>
+                            <td>2943537517262</td>
+                            <td>240-A- 4</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Patrick (Amagi) Michael Camacho</td>
+                            <td>7766514208567</td>
+                            <td>240-A- 5</td>
+                            <td>Arrival</td>
+                        </tr>
+                        <tr>
+                            <td>Matthew King</td>
+                            <td>4069897740292</td>
+                            <td>240-A- 6</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Nellee Berry</td>
+                            <td>5009059717166</td>
+                            <td>240-A- 7</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Simon Motherway</td>
+                            <td>6071434729832</td>
+                            <td>240-A- 9</td>
+                            <td>18:00</td>
+                        </tr>
+                        <tr>
+                            <td>Baptiste Théau</td>
+                            <td>6658868026575</td>
+                            <td>240-A- 10</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Anubhav Bhartiya</td>
+                            <td>8560614566867-2</td>
+                            <td>240-A- 11</td>
+                            <td>22:00</td>
+                        </tr>
+                        <tr>
+                            <td>Anubhav Bhartiya</td>
+                            <td>8560614566867</td>
+                            <td>240-A- 12</td>
+                            <td>22:00</td>
+                        </tr>
+                        <tr>
+                            <td>Simon REMIGEREAU</td>
+                            <td>8694810982312</td>
+                            <td>245-A- 9</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Tazmin Faye williams</td>
+                            <td>6277979876507</td>
+                            <td>245-A- 10</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Eamon McCaffrey</td>
+                            <td>3972553385844</td>
+                            <td>245-A- 11</td>
+                            <td>18:00</td>
+                        </tr>
+                        <tr>
+                            <td>mohamed rafik TABI</td>
+                            <td>3268189992269</td>
+                            <td>255-A - 1</td>
+                            <td>18:00</td>
+                        </tr>
+                        <tr>
+                            <td>Sasha Alekseiev</td>
+                            <td>6307379962452</td>
+                            <td>255-A - 2</td>
+                            <td>Arrival</td>
+                        </tr>
+                        <tr>
+                            <td>Sam Cutler</td>
+                            <td>9402565993743</td>
+                            <td>255-A - 3</td>
+                            <td>20:00</td>
+                        </tr>
+                        <tr>
+                            <td>Harry Bewick</td>
+                            <td>3228672050847</td>
+                            <td>255-A - 4</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Alexandre Giachino</td>
+                            <td>5784648871460</td>
+                            <td>255-A - 5</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Alexandre Giachino</td>
+                            <td>5784648871460-2</td>
+                            <td>255-A - 6</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Alexandre Giachino</td>
+                            <td>5784648871460-3</td>
+                            <td>255-A - 7</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Sahil Tulway</td>
+                            <td>7088330888855</td>
+                            <td>255-A - 8</td>
+                            <td>01:00</td>
+                        </tr>
+                        <tr>
+                            <td>Gregory Hurne</td>
+                            <td>7750521200579</td>
+                            <td>255-A - 9</td>
+                            <td>Arrival</td>
+                        </tr>
+                        <tr>
+                            <td>Marshall Moffatt</td>
+                            <td>9516529751096</td>
+                            <td>255-A - 10</td>
+                            <td>Arrival</td>
+                        </tr>
+                        <tr>
+                            <td>Amin Afshar Zarandi</td>
+                            <td>7133452722872</td>
+                            <td>255-A - 11</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Susanne Jungbluth</td>
+                            <td>9137451861528</td>
+                            <td>315</td>
+                            <td>Arrival</td>
+                        </tr>
+                        <tr>
+                            <td>Nandu Katangaza</td>
+                            <td>8022225144764</td>
+                            <td>316 - 2</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Jean Dubost</td>
+                            <td>6525713426052</td>
+                            <td>316 - 4</td>
+                            <td>16:00</td>
+                        </tr>
+                        <tr>
+                            <td>Alex Cross</td>
+                            <td>9921782940171</td>
+                            <td>316 - 5</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Claudie Lemay</td>
+                            <td>3530116641512</td>
+                            <td>420-A - 3 - FEMALE</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Shea Hunker</td>
+                            <td>5724599040702</td>
+                            <td>420-A - 6 - FEMALE</td>
+                            <td>15:00</td>
+                        </tr>
+                        <tr>
+                            <td>Anika Funke</td>
+                            <td>2772089800917</td>
+                            <td>420-A - 8 - FEMALE</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Shea Hunker</td>
+                            <td>5724599040702-2</td>
+                            <td>420-A - 10 - FEMALE</td>
+                            <td>15:00</td>
+                        </tr>
+                        <tr>
+                            <td>Elayne Rivers</td>
+                            <td>7084698858521</td>
+                            <td>445</td>
+                            <td>Arrival</td>
+                        </tr>
+                        <tr>
+                            <td>Karthika Jayaprakash</td>
+                            <td>4373754988602</td>
+                            <td>455-A - 1 - FEMALE</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Karthika Jayaprakash</td>
+                            <td>4373754988602-2</td>
+                            <td>455-A - 2 - FEMALE</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Zoe de Paus</td>
+                            <td>9007819971368</td>
+                            <td>455-A - 3 - FEMALE</td>
+                            <td>Arrival</td>
+                        </tr>
+                        <tr>
+                            <td>Diane Urbain</td>
+                            <td>5025981354593</td>
+                            <td>455-A - 4 - FEMALE</td>
+                            <td>Arrival</td>
+                        </tr>
+                        <tr>
+                            <td>Clare McLeod</td>
+                            <td>4800696264086</td>
+                            <td>455-A - 6 - FEMALE</td>
+                            <td>09:00</td>
+                        </tr>
+                        <tr>
+                            <td>Megi Nallbani</td>
+                            <td>5478288079755</td>
+                            <td>475</td>
+                            <td>15:00</td>
+                        </tr>
+                        <tr>
+                            <td>Wang Kei Lee</td>
+                            <td>8897382840155</td>
+                            <td>480</td>
+                            <td>10:00</td>
+                        </tr>
+                        <tr>
+                            <td>Souad Amini Alaoui</td>
+                            <td>9199145712773</td>
+                            <td>495-A - 2 - FEMALE</td>
+                            <td>00:00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="./index.js"></script>
+</body>
+
+</html>

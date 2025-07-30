@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "build": "npx esbuild src/index.ts --bundle --outfile=dist/index.js --platform=node",
+    "build": "npx esbuild src/index.ts --bundle --outfile=dist/index.js --platform=node --minify --sourcemap",
     "test": "vitest run"
   },
   "author": "Chris Cormier",

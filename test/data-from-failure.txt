@@ -1,0 +1,488 @@
+--------------------------- real data -------------------------------
+
+Guest	Conf #	Room	Status	
+UCPA VENTS ET VOYAGES Quebec NYC 15J groupe 3	7582804328945	102 - 1 - FEMALE	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 15J groupe 3	7582804328945-2	102 - 2 - FEMALE	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 15J groupe 3	7582804328945-3	102 - 3 - FEMALE	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 15J groupe 3	7582804328945-4	102 - 4 - FEMALE	
+Arrival
+
+
+Alain Lefevre	2130677846433	104	
+13:00
+
+
+Marie Reche	5321717025278	106 - 1 - FEMALE	
+12:00
+
+
+Marie Reche	5321717025278-2	106 - 2 - FEMALE	
+12:00
+
+
+Marie Reche	5321717025278-3	106 - 3 - FEMALE	
+12:00
+
+
+Marie Reche	5321717025278-4	106 - 4 - FEMALE	
+12:00
+
+
+PHILIPPE CHEVRETTE	5986820710288	115-A - 1	
+02:00
+
+
+cristian seguel	7990477874479	115-A - 3	
+18:00
+
+
+Mercury Guo	5500340609469	115-A - 4	
+Arrival
+
+
+cristian seguel	7990477874479-2	115-A - 8	
+18:00
+
+
+Flavien Massiera	7176796589243	115-A - 10	
+15:00
+
+
+Yatharth Raut	8978998911873	115-A - 11	
+00:00
+
+
+Yatharth Raut	8978998911873-2	115-A - 12	
+00:00
+
+
+Francisco Castillo Pons	3021641401650	115-A - 13	
+23:00
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 12J groupe 3	2931069774670-17	140-A- 3	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 12J groupe 3	2931069774670-18	140-A- 4	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 12J groupe 3	2931069774670-19	140-A- 5	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 12J groupe 3	2931069774670-20	140-A- 6	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 12J groupe 3	2931069774670-21	140-A- 7	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 12J groupe 3	2931069774670-22	140-A- 8	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 12J groupe 3	2931069774670-23	140-A- 9	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 12J groupe 3	2931069774670-24	140-A- 10	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 12J groupe 3	2931069774670-37	200 - 1	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 12J groupe 3	2931069774670-38	200 - 2	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 12J groupe 3	2931069774670-36	200 - 3	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 12J groupe 3	2931069774670-35	200 - 4	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 12J groupe 3	2931069774670-34	200 - 5	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 12J groupe 3	2931069774670-33	200 - 6	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 12J groupe 3	2931069774670-40	200 - 7	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 12J groupe 3	2931069774670-39	200 - 8	
+Arrival
+
+
+Norwin Anne Pabitu	3866233407060	202	
+21:00
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 12J groupe 3	2931069774670-4	204 - 1	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 12J groupe 3	2931069774670-2	204 - 2	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 12J groupe 3	2931069774670-3	204 - 3	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 12J groupe 3	2931069774670	204 - 4	
+Arrival
+
+
+Dilim Cormac Izuchukwu	2622588907724	206	
+00:00
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 12J groupe 3	2931069774670-5	210 - 1 - FEMALE	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 12J groupe 3	2931069774670-6	210 - 2 - FEMALE	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 12J groupe 3	2931069774670-7	210 - 3 - FEMALE	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 12J groupe 3	2931069774670-8	210 - 4 - FEMALE	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 12J groupe 3	2931069774670-10	210 - 5 - FEMALE	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 12J groupe 3	2931069774670-9	210 - 6 - FEMALE	
+Arrival
+
+
+Dave Brush	1771735565804	215-A - 4	
+00:00
+
+
+Cyril Putzer	5880773449800	215-A - 6	
+23:00
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 15J groupe 3	7582804328945-33	225-A - 1	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 15J groupe 3	7582804328945-34	225-A - 2	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 15J groupe 3	7582804328945-35	225-A - 3	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 15J groupe 3	7582804328945-36	225-A - 4	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 15J groupe 3	7582804328945-37	225-A - 5	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 15J groupe 3	7582804328945-38	225-A - 6	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 15J groupe 3	7582804328945-39	225-A - 7	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 15J groupe 3	7582804328945-40	225-A - 8	
+Arrival
+
+
+thomas ferrand-dillmann	6906332638445	245-A- 5	
+Arrival
+
+
+Sebastien Fisette	8589007430333	245-A- 7	
+00:00
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 15J groupe 3	7582804328945-23	250-A -7	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 15J groupe 3	7582804328945-17	250-A - 1	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 15J groupe 3	7582804328945-18	250-A - 2	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 15J groupe 3	7582804328945-19	250-A - 3	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 15J groupe 3	7582804328945-20	250-A - 4	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 15J groupe 3	7582804328945-21	250-A - 5	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 15J groupe 3	7582804328945-22	250-A - 6	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 15J groupe 3	7582804328945-24	250-A - 8	
+Arrival
+
+
+Danial Foo	7799338052395	270-A - 4	
+02:00
+
+
+Mélissa Santos	3060535473903	270-A - 5	
+13:00
+
+
+Scott McKay Schueler	8872145971186	270-A - 8	
+00:00
+
+
+Elina Devi Rajkumari	6228897912950	270-A - 12	
+00:00
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 15J groupe 3	7582804328945-25	290-A - 1	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 15J groupe 3	7582804328945-26	290-A - 2	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 15J groupe 3	7582804328945-27	290-A - 3	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 15J groupe 3	7582804328945-28	290-A - 4	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 15J groupe 3	7582804328945-29	290-A - 5	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 15J groupe 3	7582804328945-30	290-A - 6	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 15J groupe 3	7582804328945-31	290-A - 7	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 15J groupe 3	7582804328945-32	290-A - 8	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 12J groupe 3	2931069774670-25	300 - 1	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 12J groupe 3	2931069774670-26	300 - 2	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 12J groupe 3	2931069774670-27	300 - 3	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 12J groupe 3	2931069774670-28	300 - 4	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 12J groupe 3	2931069774670-29	300 - 5	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 12J groupe 3	2931069774670-31	300 - 6	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 12J groupe 3	2931069774670-32	300 - 7	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 12J groupe 3	2931069774670-30	300 - 8	
+Arrival
+
+
+Joe Bateman	8144048097504	312 - 3	
+Arrival
+
+
+Trevor Risavy	9876651978838	315	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 12J groupe 3	2931069774670-11	316 - 1	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 12J groupe 3	2931069774670-12	316 - 2	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 12J groupe 3	2931069774670-13	316 - 3	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 12J groupe 3	2931069774670-14	316 - 4	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 12J groupe 3	2931069774670-15	316 - 5	
+Arrival
+
+
+UCPA VENTS ET VOYAGES Quebec NYC 12J groupe 3	2931069774670-16	316 - 6	
+Arrival
+
+
+Alessandro Amendola	1164807714364	340	
+Arrival
+
+
+SHOHEI YUSUKAWA	9531635533725	355-A - 1 - FEMALE	
+Arrival
+
+
+Aidan Palacio	2249445432068-3	355-A - 2 - FEMALE	
+00:00
+
+
+Aidan Palacio	2249445432068-2	355-A - 3 - FEMALE	
+00:00
+
+
+Aidan Palacio	2249445432068	355-A - 4 - FEMALE	
+00:00
+
+
+Jamy SOULISSE	2303410691229	355-A - 5 - FEMALE	
+20:00
+
+
+Marvin Dimaano	2704998655061	355-A - 6 - FEMALE	
+Arrival
+
+
+Théo BOUCHEZ	6776389728930	355-A - 7 - FEMALE	
+Arrival
+
+
+Sandy Payendee	6358998978960	355-A - 8 - FEMALE	
+Arrival
+
+
+Isaiah Paget	5956497037535-2	355-A - 9 - FEMALE	
+00:00
+
+
+Isaiah Paget	5956497037535	355-A - 10 - FEMALE	
+00:00
+
+
+Marie-Claude Olry	3728380866515	420-A - 1 - FEMALE	
+Arrival
+
+
+Ananya Kannan	4667675649623	420-A - 12 - FEMALE	
+00:00
+
+
+Laura Murray	8090985555949	440	
+Arrival
+
+
+Cynthia Payendee	1230316502076	455-A - 7 - FEMALE	
+Arrival
+
+
+William Leler	2003687482905	460	
+22:00
+
+
+Clayton Alexander Durie	6324372683739	465	
+15:00
+
+
+Thomas Siegmund	1665132212105	480	
+15:00
+
+
+--------------------------- real data END -------------------------------
+
+
+--------------------------- report generated ----------------------------
+🛏️ Today's Arrivals By Room 🛏️🚪
+[room] - [number of arrivals] | * = private room
+
+                            
+102 - 4
+104 *
+106 - 4
+
+202 *
+204 - 4
+206 *
+210 - 6
+
+312 - 1
+316 - 6
+
+215 - 2
+225 - 8
+245 - 2
+250 - 8
+270 - 4
+290 - 8
+
+315 *
+340 *
+355 - 10
+
+420 - 2
+440 *
+455 - 1
+460 *
+465 *
+480 *
+
+
+--------------------------- report generated END ----------------------------
+               
